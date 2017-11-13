@@ -1,0 +1,14 @@
+\frametitle{Left and Right Delimiter}
+\begin{tcolorbox}[width=\textwidth, colframe=red]
+Proper size of paranthesis is obtained using \verb|\left| and \verb|\right| delimeter
+\end{tcolorbox}
+\begin{verbatim}
+\{
+\begin{pmatrix} 1 \\ n \end{pmatrix} | n \in \mathbb{N}
+\} = \left \{
+\begin{pmatrix} 1 \\ n \end{pmatrix} | n \in \mathbb{N}
+\right \}
+\end{verbatim}
+$$\{ \begin{pmatrix} 1 \\ n \end{pmatrix} | n \in \mathbb{N} \} = \left \{
+\begin{pmatrix} 1 \\ n \end{pmatrix} | n \in \mathbb{N}
+\right \}$$
