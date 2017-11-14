@@ -22,6 +22,14 @@
 \usepackage[ddmmyyyy]{datetime}
 \renewcommand{\dateseparator}{--}
 \usepackage{tcolorbox}
+\newtcolorbox{mybox}[2][]{fonttitle=\bfseries,
+attach boxed title to top center={yshift=-2mm},
+title=#2,#1}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows,shapes}
 % \setbeamertemplate{foot{}line}[text line]{%
 %   \parbox{\linewidth}{\vspace*{-8pt}Sandeep Suman\hfill\insertpagenumber}}
 
@@ -43,18 +51,18 @@
   \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents[hideallsubsections]
 \end{frame}
-
+\tikzstyle{every picture}+=[remember picture]
 \section{Introduction}
 \metroset{block=fill}
-\begin{frame}[fragile]{History}
+\begin{frame}{History}
   \begin{description}
-     \item[1982] \TeX  is developed by {\em Donald Knuth}\footnote{\url{https://en.wikipedia.org/wiki/Donald_Knuth}} in 1982 in order to 	type his acclaimed series of books on computer programming \emph{Art of Computer Programming}. 
+     \item[1982] {\TeX}  is developed by {\em Donald Knuth}\footnote{\url{https://en.wikipedia.org/wiki/Donald_Knuth}} in 1982 in order to 	type his acclaimed series of books on computer programming \emph{"Art of Computer Programming"}. 
      
-     \item[1985]  Leslie Lamport extend the \TeX system so it will be easy to create books, article etc. This is called \LaTeX.
+     \item[1985]  Leslie Lamport extend the {\TeX} system so it will be easy to create books, article etc. This is called {\LaTeX}.
           
-     \item[1993] Second edition of \LaTeX is launched, it is called \LaTeX2e which is mostly used now a days.
+     \item[1993] Second edition of {\LaTeX} is launched and it is called {\LaTeX2e} which is mostly used now a days.
      
-     \item[\textsc{Future}] \LaTeX3e is under from long time development.
+     \item[\textsc{Future}] {\LaTeX3e} is under development from long time.
      
   \end{description}
 \end{frame}
@@ -147,13 +155,15 @@
 	\item \verb|\begin{flushright} ... \end{flushright}|
 	\item \verb|\begin{center} ... \end{center}|
 \end{itemize}
-
+\pause
+\begin{mybox}[]{A Right Aligned Paragraph}
 \begin{flushright}
-\textbf{Munger} is a twin city and a Municipal Corporation situated in the Indian state of Bihar. It is the administrative headquarters of Munger district and Munger Division. It is the fifth largest city of Bihar and second largest city in Eastern Bihar.
+\textbf{Munger} is a twin city and a Municipal Corporation situated in the Indian state of Bihar. It is the administrative headquarters of Munger district and Munger Division.\\
 
-Historically, Munger is known for being an ancient seat of rule. The twin city comprises Munger and Jamalpur situated on the southern bank of the river Ganges. It is situated 60 km west of Bhagalpur, and 180 km east of capital city Patna.
-(Source: Wikipedia) \hfill
+\midskip Historically, Munger is known for being an ancient seat of rule. The twin city comprises Munger and Jamalpur situated on the southern bank of the river Ganges.\\
+(Source: Wikipedia)
 \end{flushright}
+\end{mybox}
 \end{frame}
 
 \begin{frame}[fragile]{Manual breaks
@@ -215,6 +225,11 @@ Historically, Munger is known for being an ancient seat of rule. The twin city c
       \item[Mohan] Three
     \end{description}
 \end{columns}
+\pause
+\begin{tikzpicture}[overlay]
+\draw[red, rounded corners=2ex] (0.2,4.2)rectangle (3.2,2.75);
+\draw[red, rounded corners=2ex] (3.8,4.2)rectangle (6.4,2.75);
+\end{tikzpicture}
 \end{frame}
 
 \begin{frame}[fragile]{Tables
@@ -226,16 +241,16 @@ Historically, Munger is known for being an ancient seat of rule. The twin city c
 \vspace{-0.5cm}
 \begin{verbatim}
  \begin{tabular}{ l c r }
-  1 & 2 & 3 \\
-  4 & 5 & 6 \\
-  7 & 8 & 9 \\
+  a   & a   & a   \\
+  ab  & ab  & ab  \\ 
+  abc & abc & abc \\ 
 \end{tabular}
 \end{verbatim}
 \vspace{0.5cm}
  \begin{tabular}{ l c r }
-  1 & 2 & 3 \\
-  4 & 5 & 6 \\
-  7 & 8 & 9 \\
+  a   & a   & a   \\
+  ab  & ab  & ab  \\ 
+  abc & abc & abc \\ 
 \end{tabular}
 
 
@@ -243,16 +258,16 @@ Historically, Munger is known for being an ancient seat of rule. The twin city c
 \vspace{-0.5cm}
 \begin{verbatim}
 \begin{tabular}{ l | c r |}
-  1 & 2 & 3 \\
-  4 & 5 & 6 \\ \hline
-  7 & 8 & 9 \\ \hline
+  a   & a   & a   \\ \hline
+  ab  & ab  & ab  \\ 
+  abc & abc & abc \\ 
 \end{tabular}
 \end{verbatim}
 \vspace{0.5cm}
 \begin{tabular}{ l | c r |}
-  1 & 2 & 3 \\
-  4 & 5 & 6 \\ \hline
-  7 & 8 & 9 \\ \hline
+  a   & a   & a   \\ \hline
+  ab  & ab  & ab  \\ 
+  abc & abc & abc \\ 
 \end{tabular}
 \end{columns}
 
